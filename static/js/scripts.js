@@ -8,11 +8,20 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 });
 
 // Load Theme
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    document.querySelector('#theme-toggle i').classList.replace('fa-moon', 'fa-sun');
-}
-
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    const icon = document.querySelector('#theme-toggle i');
+    
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+        // Explicitly ensure light mode for new visitors or if theme is 'light'
+        document.body.classList.remove('dark-mode');
+        icon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light'); // Set default in localStorage
+    }
+});
 // Back to Top
 const backToTop = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
