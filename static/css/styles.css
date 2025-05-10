@@ -92,11 +92,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body.dark-mode .navbar-brand .theme-logo {
-    content: url('https://anandhu-ts.github.io/MY-PORTFOLIO/static/images/logo.png');
+    content: url('https://anandhu-ts.github.io/MY_PORTFOLIO/static/images/logo.png');
 }
 
 body:not(.dark-mode) .navbar-brand .theme-logo {
-    content: url('https://anandhu-ts.github.io/MY-PORTFOLIO/static/images/logo2.png');
+    content: url('https://anandhu-ts.github.io/MY_PORTFOLIO/static/images/logo2.png');
 }
 
 .nav-link {
